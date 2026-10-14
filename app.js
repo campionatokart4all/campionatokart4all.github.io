@@ -12,7 +12,7 @@ function renderTabs(){
 function podiumClass(pos){return pos===1?'r1':pos===2?'r2':'r3'}
 function renderPodium(rows){
   const top=rows.slice(0,3);
-  const order=top.length===3?[top[1],top[0],top[2]]:top;
+  const order=top;
   document.getElementById('podium').innerHTML=order.map(d=>`<div class="podiumCard ${podiumClass(d.position)}" data-name="${d.name}"><div class="podiumPos">${d.position}</div><div class="podiumName">${d.name}</div><div class="podiumScore"><strong>${d.net}</strong><span>punti</span></div><div class="podiumInfo">Lordo ${d.gross} · Scarti ${d.discardTotal}</div></div>`).join('');
   document.querySelectorAll('.podiumCard').forEach(el=>el.onclick=()=>openDriver(DATA[current].find(x=>x.name===el.dataset.name)));
 }
