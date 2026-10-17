@@ -1,5 +1,5 @@
 const DATA=window.K4A_DATA;
-const categories=['Senior','Women','Master','Junior'];
+const categories=['Senior','Women','Master'];
 let current='Senior';
 const tabs=document.getElementById('tabs');
 const list=document.getElementById('driverList');
